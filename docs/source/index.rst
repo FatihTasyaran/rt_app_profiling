@@ -10,11 +10,6 @@ Welcome to rt_app_profiling's documentation!
    :maxdepth: 2
    :caption: Contents:
 
-
-
-Indices and tables
-==================
-
-* :ref:`genindex`
-* :ref:`modindex`
-* :ref:`search`
+   
+   profiling_amd
+   profiling_nvidia
