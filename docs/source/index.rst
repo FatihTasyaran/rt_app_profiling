@@ -10,6 +10,7 @@ Welcome to rt_app_profiling's documentation!
    :maxdepth: 2
    :caption: Contents:
 
-   
+   tested_hosts
+   preparing_environment
    profiling_amd
    profiling_nvidia
