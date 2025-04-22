@@ -1,8 +1,8 @@
 Profiling AMD Devices Using Containers
 ======================================
 
-For ``Fedora 40`` Host OS
--------------------------
+For ``Ubuntu 22.04`` Host OS
+----------------------------
 
 `Pull rocm-ready image  <https://hub.docker.com/r/rocm/dev-ubuntu-22.04>`_
 
@@ -12,5 +12,3 @@ For ``Fedora 40`` Host OS
 
     
 
-For ``Ubuntu 24.04`` Host OS
-----------------------------
