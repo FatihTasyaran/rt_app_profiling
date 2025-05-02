@@ -45,3 +45,15 @@ Note: snap docker might become problematic
 To be able to share vulkan-nvidia drivers: 
 
 sudo docker run -it --runtime=nvidia --gpus all --device /dev/dri --device /dev/kfd -e DISPLAY=$DISPLAY -v /tmp/.X11-unix:/tmp/.X11-unix -e NVIDIA_VISIBLE_DEVICES=all -e NVIDIA_DRIVER_CAPABILITIES=all -v /usr/share/vulkan/icd.d:/usr/share/vulkan/icd.d:ro -v /usr/lib/x86_64-linux-gnu:/usr/lib/x86_64-linux-gnu:ro --cap-add=SYS_ADMIN --security-opt seccomp=unconfined --net host fatih/rtap-05-demo-profile
+This is problematic because cannot install new packages inside container do instead;
+
+sudo docker run --privileged -it --runtime=nvidia --gpus all --device /dev/dri --device /dev/kfd -e DISPLAY=$DISPLAY -v /tmp/.X11-unix:/tmp/.X11-unix -e NVIDIA_VISIBLE_DEVICES=all -e NVIDIA_DRIVER_CAPABILITIES=all -v /usr/share/vulkan/icd.d:/usr/share/vulkan/icd.d:ro --cap-add=SYS_ADMIN --security-opt seccomp=unconfined --net host fatih/rtap-05-demo-profile
+
+Actually, this is enough: 
+sudo docker run --privileged -it --runtime=nvidia --gpus all --device /dev/dri --device /dev/kfd -e DISPLAY=$DISPLAY -v /tmp/.X11-unix:/tmp/.X11-unix -e NVIDIA_VISIBLE_DEVICES=all -e NVIDIA_DRIVER_CAPABILITIES=all --cap-add=SYS_ADMIN --security-opt seccomp=unconfined -v /etc/vulkan/icd.d:/etc/vulkan/icd.d:rw -v /etc/glvnd/egl-vendor.d:/etc/glvnd/egl-vendor.d:rw -v /etc/OpenCL/vendors:/etc/OpenCL/vendors:rw --net host fatih/rtap-06-autoware-install
+sudo docker run --privileged -it --runtime=nvidia --gpus all --device /dev/dri --device /dev/kfd -e DISPLAY=$DISPLAY -v /tmp/.X11-unix:/tmp/.X11-unix -e NVIDIA_VISIBLE_DEVICES=all -e NVIDIA_DRIVER_CAPABILITIES=all --cap-add=SYS_ADMIN --security-opt seccomp=unconfined --net host fatih/rtap-05-demo-profile
+If you mount volumes with only read permissions, setting up new environments will be problematic, just like in the case of autoware
+
+//
+//
+sudo docker run --privileged -it --runtime=nvidia --gpus all --device /dev/dri --device /dev/kfd -e DISPLAY=$DISPLAY -v /tmp/.X11-unix:/tmp/.X11-unix -e NVIDIA_VISIBLE_DEVICES=all -e NVIDIA_DRIVER_CAPABILITIES=all --cap-add=SYS_ADMIN --security-opt seccomp=unconfined -v /etc/vulkan/icd.d:/etc/vulkan/icd.d:rw -v /etc/glvnd/egl-vendor.d:/etc/glvnd/egl-vendor.d:rw -v /etc/OpenCL/vendors:/etc/OpenCL/vendors:rw --net host fatih/rtap-06-autoware-install
