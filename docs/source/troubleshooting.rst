@@ -33,6 +33,10 @@ vkinfo | grep "GPU id"
 This should print vulkan capable NVIDIA GPU, if only LLVM vulkan device is present it means container is not able to access NVIDIA GPU. 
 vkcube
 vkcube works if integrated GPU is vulkan capable, which is the case with AMD iGPUs and amdpu drivers on Ubuntu. Make sure selected GPU is NVIDIA, if vkcube only present black screen it means none of the GPUs on the system are usable by the container.
+For some reason, vulkan drivers expect to find NVIDIA Vulkan ICD at ``/etc/vulkan/icd.d/``, however it is located at ``/usr/share/vulkan/icd.d``
 
+A turn-around for this problem is to:
 
+.. code-block:: bash
 
+    sudo cp /usr/share/vulkan/nvidia_icd.json /etc/vulkan/icd.d/

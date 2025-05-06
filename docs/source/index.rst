@@ -12,7 +12,6 @@ Welcome to rt_app_profiling's documentation!
 
    tested_hosts
    preparing_host_environment
-   docker_images
    profiling_amd
    profiling_nvidia
    troubleshooting

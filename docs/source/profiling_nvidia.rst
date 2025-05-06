@@ -53,7 +53,7 @@ Key Changes
   - **Patched:**
     ::
 
-      path: /tmp/nvidia.icd
+      path: /tmp/nvidia.icdsudo ln -s /usr/bin/python3 /usr/bin/python
 
 4. **Optional: Create symlinks (fail silently if `/etc` is read-only)**
 
@@ -103,3 +103,20 @@ Replace the existing `main.yaml` file in:
 With the patched version described above, or copy the relevant changes directly if combining with other updates.
 
 
+
+Autoware Packages
+-----------------
+389 packages finished [52min 28s]
+  23 packages had stderr output: autoware_bag_time_manager_rviz_plugin autoware_cmake autoware_costmap_generator autoware_cuda_dependency_meta autoware_elevation_map_loader autoware_external_velocity_limit_selector autoware_freespace_planning_algorithms autoware_lanelet2_extension_python autoware_lint_common autoware_radar_scan_to_pointcloud2 autoware_remaining_distance_time_calculator autoware_shape_estimation autoware_smart_mpc_trajectory_follower autoware_surround_obstacle_checker autoware_system_monitor autoware_tensorrt_classifier autoware_traffic_light_selector pointcloud_to_laserscan trt_batched_nms yabloc_common yabloc_image_processing yabloc_particle_filter yabloc_pose_initializer
+
+
+Enabling `ros2_tracing`
+-----------------------
+
+git clone -b humble https://github.com/ros2/ros2_tracing.git
+https://github.com/ros2/ros2_tracing/issues/77
+source /root/ros2_tracing/install/setup.bash
+
+For humble: 
+https://docs.ros.org/en/humble/Tutorials/Advanced/ROS2-Tracing-Trace-and-Analyze.html#tracing
+ros2 launch autoware_trace_launch trace_e2e_simulator.launch.py

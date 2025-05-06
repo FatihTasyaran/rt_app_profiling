@@ -1,21 +1,44 @@
 Tested Hosts
 ============
 
-Following settings are tested and images are (will be) available:
+Following settings are tested and images are available:
 
-``Host1``\\
-**CPU**: AMD Ryzen 9 7940HS\\
-**GPU1**: AMD Radeon 780M (amdgcn-amd-amdhsa--gfx1103)\\
-**GPU2**: NVIDIA GeForce RTX 4060 Max-Q\\
+``Host1``
 
-**OS**: Ubuntu 22.04 LTS\\
-**Kernel**: 6.8.0-57-generic\\
+| **CPU**: AMD Ryzen 9 7940HS  
+| **GPU1**: AMD Radeon 780M (amdgcn-amd-amdhsa--gfx1103)
+| **GPU2**: NVIDIA GeForce RTX 4060 Max-Q
 
-**NVIDIIA Driver Version**: 550.120\\
-**CUDA Version**: 12.4\\
+| **OS**: Ubuntu 22.04 LTS
+| **Kernel**: 6.8.0-57-generic
 
-**ROCk Module Version**: 6.10.5\\
-**ROCm Version**: 1.14\\ 
+| **NVIDIIA Driver Version**: 550.120
+| **CUDA Version**: 12.4
+
+| **ROCk Module Version**: 6.10.5
+| **ROCm Version**: 1.14
+
+| **Docker Version**: 28.1.1
+
+
+``Host2``
+
+| **CPU**: Intel i7-12700H 
+| **GPU1**: Intel Alder Lake-P GT2 [Iris Xe Graphics]
+| **GPU2**: NVIDIA RTX A1000 Laptop GPU
+
+| **OS**: Ubuntu 22.04.5 LTS
+| **Kernel**: 6.8.0-58-generic
+
+| **NVIDIIA Driver Version**: 550.120
+| **CUDA Version**: 12.4
+
+| **ROCk Module Version**: XXX
+| **ROCm Version**: XXX
+
+| **Docker Version**: 28.1.1
+
+
 
 
 
